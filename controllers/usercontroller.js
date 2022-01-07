@@ -383,11 +383,11 @@ exports.user_post_rate_review = (_req, _res) => {
             }
         });
     } else if (typeof _req.files.avatarimage !== "undefined" && typeof _req.files.video === "undefined") {
-        const dest = 'C:/xampp/htdocs/hotelimages/storeimages/';
+        const dest = path.join(__dirname, '../public/images/hotelimages/storeimages/');
         const tempPath1 = _req.files.avatarimage[0].path;
         const datetime = new Date().getTime();
         const targetPath1 = dest + datetime + "commentimage.png";
-        const url1 = "http://localhost/hotelimages/storeimages/" + datetime + "commentimage.png";
+        const url1 = "https://hotelyahaytest.herokuapp.com/images/hotelimages/storeimages/" + datetime + "commentimage.png";
         const imagevideo = JSON.stringify([url1.toString()]);
         fs.rename(tempPath1, targetPath1, _err1 => {
             if (!_err1) {
@@ -403,11 +403,11 @@ exports.user_post_rate_review = (_req, _res) => {
             }
         });
     } else if (typeof _req.files.avatarimage === "undefined" && typeof _req.files.video !== "undefined") {
-        const dest = 'C:/xampp/htdocs/hotelimages/storeimages/';
+        const dest = path.join(__dirname, '../public/images/hotelimages/storeimages/');
         const tempPath2 = _req.files.video[0].path;
         const datetime = new Date().getTime();
         const targetPath2 = dest + datetime + "commentvideo.mp4";
-        const url2 = "http://localhost/hotelimages/storeimages/" + datetime + "commentvideo.mp4";
+        const url2 = "https://hotelyahaytest.herokuapp.com/images/hotelimages/storeimages/" + datetime + "commentvideo.mp4";
         const imagevideo = JSON.stringify([url2.toString()]);
         fs.rename(tempPath2, targetPath2, _err2 => {
             if (!_err2) {
@@ -423,14 +423,14 @@ exports.user_post_rate_review = (_req, _res) => {
             }
         });
     } else {
-        const dest = 'C:/xampp/htdocs/hotelimages/storeimages/';
+        const dest = path.join(__dirname, '../public/images/hotelimages/storeimages/');
         const tempPath1 = _req.files.avatarimage[0].path;
         const tempPath2 = _req.files.video[0].path;
         const datetime = new Date().getTime();
         const targetPath1 = dest + datetime + "commentimage.png";
         const targetPath2 = dest + datetime + "commentvideo.mp4";
-        const url1 = "http://localhost/hotelimages/storeimages/" + datetime + "commentimage.png";
-        const url2 = "http://localhost/hotelimages/storeimages/" + datetime + "commentvideo.mp4";
+        const url1 = "https://hotelyahaytest.herokuapp.com/images/hotelimages/storeimages/" + datetime + "commentimage.png";
+        const url2 = "https://hotelyahaytest.herokuapp.com/images/hotelimages/storeimages/" + datetime + "commentvideo.mp4";
         const imagevideo = JSON.stringify([url2.toString(), url1.toString()]);
         fs.rename(tempPath1, targetPath1, _err1 => {
             if (!_err1) {
