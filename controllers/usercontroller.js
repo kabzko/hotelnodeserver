@@ -172,7 +172,7 @@ exports.user_reserve_room = (_req, _res) => {
     const tempPath1 = _req.files.proofofpayment[0].path;
     const datetime = new Date().getTime();
     const targetPath1 = dest + datetime + "proofofpayment.png";
-    const url1 = "http://192.168.200.8/images/hotelimages/storeimages/" + datetime + "proofofpayment.png";
+    const url1 = "https://hotelyahaytest.herokuapp.com/images/hotelimages/storeimages/" + datetime + "proofofpayment.png";
     mysql.query('SELECT COUNT(*) as count FROM orders WHERE user_id = "' + + _req.body.userid + '" AND from_datetime = "' + _req.body.from + '" AND to_datetime = "' + _req.body.to + '" AND status_id = 1', (_err, _rows) => {
         if (!_err) {
             if (_rows[0].count == 0) {
