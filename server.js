@@ -9,4 +9,4 @@ app.use('/', require('./routes/routes'));
 app.use('/images', express.static(__dirname + '/public/images'));
 
 const port = process.env.PORT || '5000';
-app.listen(port, console.log('Server started on port ' + port));
+app.listen(port, console.log('Server started on ports ' + port));
